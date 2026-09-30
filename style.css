@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    ---color-container-bg: hsl(0, 100%, 100%);
+    --color-bg: hsl(0, 0%, 94%);
+    --color-border: hsl(0, 0%, 86%);
+    --color-label-text: hsl(0, 1%, 44%);
+    --color-input-text : hsl(0, 0%, 0%);
+    --color-img-bg:hsl(259, 100%, 65%);
+    --font:'Poppins', sans-serif;
+    --color-error-text: #f4100e;
+}
+
+body{
+    font-family: var(--font);
+    background-color: var(--color-bg);
+}
+main{
+    margin:5rem 1rem 1rem 1rem;
+    background-color: var(---color-container-bg);
+    padding:2.6rem 1rem;
+    border-radius: 20px 20px clamp(95px, 13vw, 147px) 20px;
+    
+}
+form{
+    
+    padding: 5px 5px 50px 5px;
+    position: relative;
+    
+    gap: 1rem;
+}
+form::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+    
+}
+.input-fields{
+    display: flex;
+    gap: 15px;
+}
+.input-group {
+    flex: 1;
+    min-width: 0;
+    gap: 7px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group input {
+    width: 100%;
+    font-family: var(--font);
+    padding: 13px;
+    border-radius: 7px;
+    border: 1px solid var(--color-border);
+    font-family: var(--font);
+    color: var(--color-input-text);
+    font-size: clamp(18px, 3vw, 23px);
+    font-weight: 700;
+}
+.input-group input::placeholder {
+    color: var(--color-border);
+}
+.input-group input:focus {
+   
+    outline: none;
+}
+
+
+.calculate-btn{
+    position: absolute;
+    background-color: var(--color-img-bg);
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    width: clamp(60px, 10vw, 70px);
+    height: clamp(60px, 10vw, 70px);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+.calculate-btn img{
+    width: clamp(22.5px, 4vw, 35.5px);
+    height: auto;
+}
+.input-group label{
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.3px;
+    font-weight: 700;
+    color: var(--color-label-text);
+}
+.your-age{
+    padding-block-start: 2.5rem;
+
+}
+.your-age p{
+    font-size: clamp(50px, 13vw, 70px);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.15;
+}
+.your-age span{
+    color: var(--color-img-bg);
+    margin-inline-end: 6px;
+}
+
+
+/*error styling*/
+.empty, .invalid-day, .invalid-month, .invalid-year{
+    
+    font-size: 11px;
+    font-style: italic;
+    color: var(--color-error-text);
+}
+.input-group input.error{
+    border-color: var(--color-error-text);
+}
+.input-group.error label {
+    color: var(--color-error-text);
+    
+}
+
+/*hover style*/
+
+.input-group input:hover {
+    border-color: var(--color-input-text);
+    cursor: pointer;
+}
+.calculate-btn:hover {
+    background-color: var(--color-input-text);
+}
+
+/*desktop view*/
+
+@media screen and (min-width:48rem) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    main{
+        padding-inline-start: 2rem;
+        width: 100%;
+        max-width: 650px;
+    }
+    form{
+        width: 100%;
+        max-width: none;
+    }
+    .input-fields{
+        width: 68%;
+    }
+    .calculate-btn {
+        left: 85%;
+        
+    }
+    form::after {
+        width: 80%;
+    }
+    .input-group input{
+        padding: 10px;
+    }
+}

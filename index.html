@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,400;0,700;1,800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+
+  </style>
+</head>
+<body>
+  <header></header>
+  <main>
+    <section class="age-calculator">
+      <form action="" class="user-data">
+        <div class="input-fields">
+          <div class="input-group">
+            <label for="day">Day</label>
+            <input type="text" id="day" name="day" placeholder="DD" inputmode="numeric" maxlength="2">
+            <span class="empty" style="display: none;">This field is required </span>
+            <span class="invalid-day" style="display: none;">Must be a valid day </span>
+          </div>
+          <div class="input-group">
+            <label for="day">Month</label>
+            <input type="text" id="month" name="day" placeholder="MM" inputmode="numeric" maxlength="2">
+            <span class="empty" style="display: none;">This field is required </span>
+            <span class="invalid-month" style="display: none;">Must be a valid month</span>
+          </div>
+          <div class="input-group">
+            <label for="day">Year</label>
+            <input type="text" id="year" name="day" placeholder="YYYY" inputmode="numeric" maxlength="4">
+            <span class="empty" style="display: none;">This field is required </span>
+            <span class="invalid-year" style="display: none;">Must be in the past</span>
+          </div>
+        </div>
+        <button type="submit" class="calculate-btn">
+          <img src="./assets/images/icon-arrow.svg" alt="Calculate">
+        </button>
+      </form>
+      <div class="your-age">
+        <p id="years"><span>--</span>years</p>
+        <p id="months"><span>--</span>months</p>
+
+        <p id="days"><span>--</span>days</p>
+
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+  <script src="script.js"></script>
+</body>
+</html>
